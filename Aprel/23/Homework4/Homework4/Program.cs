@@ -54,9 +54,6 @@ namespace Homework4
             Console.WriteLine($"12: {f3}");
             Console.WriteLine($"13: {k}");
 
-            Console.ReadLine();
-
-
         }
     }
 }

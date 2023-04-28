@@ -31,7 +31,7 @@ namespace Homework2
 
             Console.Write("Ad: ");
             string name = Console.ReadLine();
-            
+
             Console.Write("Soyad: ");
             string surname = Console.ReadLine();
 
@@ -60,14 +60,6 @@ namespace Homework2
 
             Console.WriteLine($"Ad: {name}\nSoyad: {surname}\nCins: {gender}\nDoğum tarixi: {dateOfBirth}\nYaşadığı ölkə: {country}\nYaşadığı şəhər: {city}\nBoy: {height}\nÇəki: {weight}\nMaaş: {salary}");
 
-
-
-
-
-
-            #region ForResultsReview
-            Console.ReadLine();
-            #endregion
         }
     }
 }

@@ -35,14 +35,9 @@ namespace Homework3
                 byte salaryCast = (byte)salary; 
             }
 
-
-            unchecked
-            {
-                byte heightCast = (byte)height;
-                byte weightCast = (byte)weight;
-                byte fCountCast = (byte)fCount;
-            }
-            
+            byte heightCast = (byte)height;
+            byte weightCast = (byte)weight;
+            byte fCountCast = (byte)fCount;
 
         }
     }

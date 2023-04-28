@@ -68,11 +68,6 @@ namespace Homework1
             Console.WriteLine(eResult1);
 
 
-            #region ForResultsReview
-            Console.ReadLine();
-            #endregion
-
-
 
 
         }
