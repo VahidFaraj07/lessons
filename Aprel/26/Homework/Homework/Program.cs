@@ -26,9 +26,9 @@ namespace Homework
             int a = 20;
             int b = 50;
 
-            b += a;
-            a = b - a;
-            b = b - a;
+            b += a;         // b=70
+            a = b - a;      // a=50  
+            b = b - a;      // b=30
 
             Console.WriteLine($"a = {a}, b = {b}");
             #endregion
