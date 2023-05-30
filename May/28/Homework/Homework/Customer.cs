@@ -99,17 +99,17 @@ namespace Homework
             }
             else
             {
-                foreach (char c in tempPass)
+                foreach (char letter in tempPass)
                 {
-                    if (Char.IsLower(c))
+                    if (Char.IsLower(letter))
                     {
                         hasLower = true;
                     }
-                    else if (Char.IsUpper(c))
+                    else if (Char.IsUpper(letter))
                     {
                         hasUpper = true;
                     }
-                    else if (Char.IsDigit(c))
+                    else if (Char.IsDigit(letter))
                     {
                         hasDigit = true;
                     }
@@ -137,9 +137,9 @@ namespace Homework
 
         private static bool isNullOrEmpty(params string[] par)
         {
-            foreach (string item in par)
+            foreach (var item in par)
             {
-                if (item == null || item == "")
+                if (string.IsNullOrWhiteSpace(item))
                 {
                     return true;
                 }

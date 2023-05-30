@@ -52,7 +52,7 @@ namespace Homework
                 Surname = "Farajzadeh",
                 Email = "vahid.farajzadeh@gmail.com",
                 Username = "vahidfaraj",
-                Password = "admin123"
+                Password = "Admin123"
             };
             Customer.AddCustomer(customer1);
 
