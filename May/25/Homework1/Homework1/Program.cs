@@ -24,12 +24,12 @@ namespace Homework1
         static void Main(string[] args)
         {
             Student student = new Student();
-            student.Name = "Vahid"; //email, soyad field'ları və Soyad property'si burada null olur)
-            student.Surname = "Farajzadeh"; //(email burada orkhan.farajov@gmail.com olaraq set olunur)
+            student.Name = "Vahid"; 
+            student.Surname = "Farajzadeh"; 
 
             Student student2 = new Student();
-            student2.Surname = "Farajzadeh"; //(email, ad field'ları və Ad property'si burada null olur)
-            student2.Name = "Vahid"; //(email burada orkhan.farajov@gmail.com olaraq set olunur)
+            student2.Surname = "Farajzadeh";
+            student2.Name = "Vahid";
         }
     }
 }

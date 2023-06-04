@@ -15,7 +15,6 @@ namespace Homework1
             set
             {
                 name = value;
-
                 if (surname != null)
                 {
                     email = $"{name}.{surname}@gmail.com";
