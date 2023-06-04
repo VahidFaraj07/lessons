@@ -45,38 +45,38 @@ namespace Homework1
             #endregion
 
             #region Homework2
-            //for (int i = 1; i < 10; i++)
-            //{
-            //    for (int j = 1; j < 10; j++)
-            //    {
-            //        Console.Write($"{i}*{j}={i * j}\t");
-            //    }
-            //    Console.WriteLine();
-            //}
+            for (int i = 1; i < 10; i++)
+            {
+                for (int j = 1; j < 10; j++)
+                {
+                    Console.Write($"{i}*{j}={i * j}\t");
+                }
+                Console.WriteLine();
+            }
             #endregion
 
             #region Homework3
-            //Console.Write("Texmin oyunu ucun en yuksek deyeri daxil edin: ");
-            //int highestValue = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Texmin oyunu ucun en yuksek deyeri daxil edin: ");
+            int highestValue = Convert.ToInt32(Console.ReadLine());
 
-            //Random random = new Random();
-            //int winNum = random.Next(1, highestValue);
+            Random random = new Random();
+            int winNum = random.Next(1, highestValue);
 
-            //int tryCount = 0;
+            int tryCount = 0;
 
-            //while (true)
-            //{
-            //    tryCount++;
-            //    Console.Write($"{tryCount}. Cehdiniz! Zehmet olmasa reqemi texmin edin:");
-            //    int estNum = Convert.ToInt32(Console.ReadLine());
+            while (true)
+            {
+                tryCount++;
+                Console.Write($"{tryCount}. Cehdiniz! Zehmet olmasa reqemi texmin edin:");
+                int estNum = Convert.ToInt32(Console.ReadLine());
 
-            //    if (winNum == estNum)
-            //    {
-            //        Console.WriteLine($"{tryCount}. Cehdinizde duzgun reqemi tapdiniz!");
-            //        break;
-            //    }
-            //    Console.Clear();
-            //}
+                if (winNum == estNum)
+                {
+                    Console.WriteLine($"{tryCount}. Cehdinizde duzgun reqemi tapdiniz!");
+                    break;
+                }
+                Console.Clear();
+            }
             #endregion
 
             #region Homework4
