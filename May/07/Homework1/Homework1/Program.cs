@@ -58,8 +58,6 @@ namespace Homework1
                 isNum = false;
             }
 
-
-
             int arrSum1 = 0;
             for (int i = 0; i < arr.Length; i++)
             {
@@ -68,15 +66,6 @@ namespace Homework1
             Console.WriteLine($"Cem = {arrSum1}");
             Console.WriteLine($"Ortalama = {(double)arrSum1 / arr.Length}\n");
 
-
-
-            int arrSum2 = 0;
-            foreach (var item in arr)
-            {
-                arrSum2 += item;
-            }
-            Console.WriteLine($"Cem = {arrSum2}");
-            Console.WriteLine($"Ortalama = {(double)arrSum2 / arr.Length}");
             #endregion
 
 
@@ -90,11 +79,9 @@ namespace Homework1
                 for (int j = 0; j < numArr.Length; j++)
                 {
                     if (numArr[i] > numArr[j])
-                    {
                         tempCount++;
-                    }
+                    
                 }
-
                 sortedArr[tempCount] = numArr[i];
             }
 
@@ -159,7 +146,9 @@ namespace Homework1
             //Array.IndexOf - deyeri 23 olan elementin indeks nomresini tap
             Console.WriteLine(Array.IndexOf(arr1, 23));
 
-
+            int[] myArray = new int[5] { 1, 2, 3, 4, 5 };
+            // resize the array to 10 elements
+            Array.Resize(ref myArray, 6);
             #endregion
 
 
