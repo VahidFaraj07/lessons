@@ -6,7 +6,8 @@ namespace Homework
 {
     public class Customer
     {
-        private string username, password;
+        private string _username, _password;
+
         private static ArrayList db;
 
         public int Id { get; set; }
@@ -15,21 +16,20 @@ namespace Homework
         public string Email { get; set; }
 
         public string Username
-
         {
             get
             {
-                return this.username;
+                return this._username;
             }
             set
             {
-                if (isUsernameExists(value))
+                if (IsUsernameExists(value))
                 {
-                    this.username = null;
+                    this._username = null;
                 }
                 else
                 {
-                    this.username = value;
+                    this._username = value;
                 }
             }
         }
@@ -38,13 +38,13 @@ namespace Homework
         {
             get
             {
-                return this.password;
+                return this._password;
             }
             set
             {
-                if (passIsOkay(value))
+                if (PassIsOkay(value))
                 {
-                    this.password = value;
+                    this._password = value;
 
                 }
                 else
@@ -62,9 +62,9 @@ namespace Homework
 
         public static void AddCustomer(Customer obj)
         {
-            if (!isNullOrEmpty(obj.Id.ToString(), obj.Name, obj.Surname, obj.Email, obj.username, obj.password))
+            if (!IsNullOrEmpty(obj.Id.ToString(), obj.Name, obj.Surname, obj.Email, obj._username, obj._password))
             {
-                if (isEmailExists(obj.Email))
+                if (IsEmailExists(obj.Email))
                 {
                     Console.WriteLine("Elave etmek istediyiniz email artiq sistemde movcuddur!");
                 }
@@ -76,11 +76,11 @@ namespace Homework
             }
         }
 
-        private static bool isUsernameExists(string tempUsername)
+        private static bool IsUsernameExists(string tempUsername)
         {
             foreach (Customer item in db)
             {
-                if (item.username.ToString() == tempUsername)
+                if (item._username.ToString() == tempUsername)
                 {
                     return true;
                 }
@@ -88,7 +88,7 @@ namespace Homework
             return false;
         }
 
-        private static bool passIsOkay(string tempPass)
+        private static bool PassIsOkay(string tempPass)
         {
             bool hasLower = false;
             bool hasUpper = false;
@@ -122,7 +122,7 @@ namespace Homework
             return false;
         }
 
-        private static bool isEmailExists(string tempEmail)
+        private static bool IsEmailExists(string tempEmail)
         {
             foreach (Customer item in db)
             {
@@ -135,7 +135,7 @@ namespace Homework
         }
 
 
-        private static bool isNullOrEmpty(params string[] par)
+        private static bool IsNullOrEmpty(params string[] par)
         {
             foreach (var item in par)
             {
