@@ -105,10 +105,10 @@ namespace Homework1
 
             customer.Orders[1] = laptopOrder;
 
-            customer.ShowAllInfo();
+            //customer.ShowAllInfo();
             //customer.ShowOrders();
             //customer.ShowAddresses();
-            //customer.ShowContacts();
+            customer.ShowContacts();
 
 
         }
