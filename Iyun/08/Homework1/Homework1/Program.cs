@@ -84,13 +84,14 @@ namespace Homework1
     {
         static void Main(string[] args)
         {
-            Product tv1 = new Tv()
+            Tv tv1 = new Tv()
             {
-                Barcode = "2232323",
+
+                Barcode = "001",
                 Brand = "Samsung",
                 Model = "V23",
                 BuyPrice = 2000,
-                SellPrice = 2500,
+                SellPrice = 2100,
                 OfferPrice = 3000,
                 IsSmartTv = true,
                 HasHDMI = true,
@@ -99,14 +100,14 @@ namespace Homework1
                 CreateUser = 1,
                 EditDate = DateTime.Now,
                 EditUser = 1,
-                IsDeleted = true,
+                IsDeleted = false,
                 DeleteDate = DateTime.Now,
                 DeleteUser = 1,
             };
 
-            Product tv2 = new Tv()
+            Tv tv2 = new Tv()
             {
-                Barcode = "2232324",
+                Barcode = "001",
                 Brand = "Samsung",
                 Model = "V24",
                 BuyPrice = 2200,
@@ -119,13 +120,15 @@ namespace Homework1
                 CreateUser = 1,
                 EditDate = DateTime.Now,
                 EditUser = 1,
-                IsDeleted = true,
+                IsDeleted = false,
                 DeleteDate = DateTime.Now,
                 DeleteUser = 1,
             };
 
-            Product[] myP = {tv1, tv2};
-            DbActions.NewItems(myP);
+
+            DbActions.NewItems(tv1, tv2);
+
+
             DbActions.ShowItems();
 
         }

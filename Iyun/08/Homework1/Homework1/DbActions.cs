@@ -12,16 +12,19 @@ namespace Homework1
         {
             if (BarcodeCanBeAdd(Product))
             {
-                db.Add(Product);
+                if (ControlPrice(Product.BuyPrice, Product.SellPrice, Product.OfferPrice))
+                {
+                    db.Add(Product);
+                }          
             }
             else {
-                Console.WriteLine($"{Product.Barcode} barkodu daha once basqa mehsul ucun sisteme elave olunub!");
+                Console.WriteLine($"\"{Product.Barcode}\" barkodu daha once basqa mehsul ucun sisteme elave olunub!");
             }
         }
 
-        public static void NewItems(Product[] args)
+        public static void NewItems(params Product[] Products)
         {
-            foreach (var Product in args)
+            foreach (var Product in Products)
             {
                 NewItem(Product);
             }
@@ -29,7 +32,7 @@ namespace Homework1
 
         public static void UpdateItem(Product Product)
         {
-
+            Console.WriteLine("Update olundu");
         }
 
         public static void DeleteItem(Product Product)
@@ -86,6 +89,29 @@ namespace Homework1
                 }
                 return result;
 
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        private static bool ControlPrice(decimal BuyPrice, decimal SellPrice, decimal OfferPrice)
+        {
+            if (BuyPrice < 1)
+            {
+                Console.WriteLine("Alis qiymeti 1-den kicik ola bilmez!");
+                return false;
+            }
+            else if (SellPrice < BuyPrice)
+            {
+                Console.WriteLine("Satis qiymeti alis qiymetinden az ola bilmez!");
+                return false;
+            }
+            else if (OfferPrice < 1)
+            {
+                Console.WriteLine("Kompaniya qiymeti 1-den kicik ola bilmez!");
+                return false;
             }
             else
             {
