@@ -34,7 +34,7 @@ namespace Homework1
 
         public static void DeleteItem(Product Product)
         {
-
+            Product.IsDeleted = true;
         }
 
         // This method is created to control the results of the code
@@ -72,14 +72,14 @@ namespace Homework1
             db = new ArrayList();
         }
 
-        public static bool BarcodeCanBeAdd(Product product)
+        public static bool BarcodeCanBeAdd(Product Product)
         {
             if (db.Count != 0)
             {
                 bool result = false;
                 foreach (Product item in db)
                 {
-                    if (product.Barcode != item.Barcode || item.IsDeleted == true)
+                    if (Product.Barcode != item.Barcode || item.IsDeleted == true)
                     {
                         result = true;
                     }

@@ -124,7 +124,7 @@ namespace Homework1
                 DeleteUser = 1,
             };
 
-            Product[] myP = {tv1, tv2 };
+            Product[] myP = {tv1, tv2};
             DbActions.NewItems(myP);
             DbActions.ShowItems();
 
