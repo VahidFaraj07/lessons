@@ -128,8 +128,7 @@ namespace Homework1
 
             DbActions.NewItems(tv1, tv2);
 
-
-            DbActions.ShowItems();
+            DbActions.UpdateItem(tv1);
 
         }
     }

@@ -15,9 +15,10 @@ namespace Homework1
                 if (ControlPrice(Product.BuyPrice, Product.SellPrice, Product.OfferPrice))
                 {
                     db.Add(Product);
-                }          
+                }
             }
-            else {
+            else
+            {
                 Console.WriteLine($"\"{Product.Barcode}\" barkodu daha once basqa mehsul ucun sisteme elave olunub!");
             }
         }
@@ -30,44 +31,61 @@ namespace Homework1
             }
         }
 
-        public static void UpdateItem(Product Product)
+        public static void UpdateItem(Tv Product)
         {
-            Console.WriteLine("Update olundu");
+            foreach (Tv item in db)
+            {
+                if (Product.Id == item.Id)
+                {
+                    item.Barcode = Product.Barcode;
+                    item.Brand = Product.Brand;
+                    item.Model = Product.Model;
+                    item.BuyPrice = Product.BuyPrice;
+                    item.SellPrice = Product.SellPrice;
+                    item.OfferPrice = Product.OfferPrice;
+                    item.IsSmartTv = Product.IsSmartTv;
+                    item.HasHDMI = Product.HasHDMI;
+                    item.Resolution = Product.Resolution;
+                    item.CreateDate = Product.CreateDate;
+                    item.CreateUser = Product.CreateUser;
+                    item.EditDate = Product.EditDate;
+                    item.EditUser = Product.EditUser;
+                    item.IsDeleted = Product.IsDeleted;
+                    item.DeleteDate = Product.DeleteDate;
+                    item.DeleteUser = Product.DeleteUser;
+                }
+            }
+        }
+
+        public static void UpdateItem(Laptop Product)
+        {
+            foreach (Laptop item in db)
+            {
+                if (Product.Id == item.Id)
+                {
+                    item.Barcode = Product.Barcode;
+                    item.Brand = Product.Brand;
+                    item.Model = Product.Model;
+                    item.BuyPrice = Product.BuyPrice;
+                    item.SellPrice = Product.SellPrice;
+                    item.OfferPrice = Product.OfferPrice;
+                    item.CPU = Product.CPU;
+                    item.Ram = Product.Ram;
+                    item.GraphicCard = Product.GraphicCard;
+                    item.CreateDate = Product.CreateDate;
+                    item.CreateUser = Product.CreateUser;
+                    item.EditDate = Product.EditDate;
+                    item.EditUser = Product.EditUser;
+                    item.IsDeleted = Product.IsDeleted;
+                    item.DeleteDate = Product.DeleteDate;
+                    item.DeleteUser = Product.DeleteUser;
+                }
+            }
         }
 
         public static void DeleteItem(Product Product)
         {
             Product.IsDeleted = true;
-        }
-
-        // This method is created to control the results of the code
-        public static void ShowItems()
-        {
-            foreach (var item in db)
-            {
-                if (item.GetType() == typeof(Tv))
-                {
-                    Tv a = (Tv)item;
-                    Console.WriteLine($"{a.Id}");
-                    Console.WriteLine($"{a.IsSmartTv}");
-                    Console.WriteLine($"{a.HasHDMI}");
-                    Console.WriteLine($"{a.Resolution}");
-                    Console.WriteLine($"{a.Barcode}");
-                    Console.WriteLine($"{a.Brand}");
-                    Console.WriteLine($"{a.IsDeleted}");
-                }
-                else
-                {
-                    Laptop a = (Laptop)item;
-                    Console.WriteLine($"{a.Id}");
-                    Console.WriteLine($"{a.CPU}");
-                    Console.WriteLine($"{a.Ram}");
-                    Console.WriteLine($"{a.GraphicCard}");
-                    Console.WriteLine($"{a.Barcode}");
-                    Console.WriteLine($"{a.Brand}");
-                    Console.WriteLine($"{a.IsDeleted}");
-                }
-            }
         }
 
         static DbActions()
