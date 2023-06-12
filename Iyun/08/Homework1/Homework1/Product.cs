@@ -13,6 +13,7 @@ namespace Homework1
             {
                 return _id;
             }
+            private set { }
         }
 
         public string Barcode { get; set; }
