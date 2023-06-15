@@ -12,7 +12,7 @@ namespace Homework1
         {
             if (y != 0)
             {
-                base.Subtract(x, y);
+                base.Divide(x, y);
             }
             else
             {
