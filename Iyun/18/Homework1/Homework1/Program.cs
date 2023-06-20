@@ -96,7 +96,12 @@ namespace Homework1
             };
             customers.Add(customer3);
 
-            customers.ForEach(Customer.ShowCustomerItems);
+
+            customers.ForEach(i => { Customer.ShowCustomerItems(i); });
+
+            //customers.ForEach(Customer.ShowCustomerItems);
+
+
 
         }
     }
