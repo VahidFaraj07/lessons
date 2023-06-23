@@ -8,7 +8,7 @@ namespace Homework2
     {
         void Add(T obj);
         void Update(T obj, int id);
-        T Get(int id);
+        void Get(int id);
         void Delete(int id);
     }
 }

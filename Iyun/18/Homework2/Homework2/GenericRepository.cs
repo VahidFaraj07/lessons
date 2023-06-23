@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace Homework2
@@ -20,12 +21,21 @@ namespace Homework2
 
         public void Update(T obj, int id)
         {
-            items[id] = obj;
         }
 
-        public T Get(int id)
+        public void Get(int id)
         {
-            return items[id];
+            foreach (var obj in items)
+            {
+                Type type = obj.GetType();
+                PropertyInfo[] properties = type.GetProperties();
+
+                foreach (PropertyInfo property in properties)
+                {
+                    Console.WriteLine($"{property.Name}: {property.GetValue(obj)}");
+                }
+                Console.WriteLine();
+            }                   
         }
 
         public void Delete(int id)

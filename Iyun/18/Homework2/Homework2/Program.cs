@@ -13,7 +13,7 @@ namespace Homework2
         static void Main(string[] args)
         {
             Book newBook1 = new Book {
-                Id = 1,
+                Id = 0,
                 Name = "C#",
                 Author = "Vahid",
                 CountOfPages = 223
@@ -28,8 +28,9 @@ namespace Homework2
             };
 
             GenericRepository<Book> connectionA = new GenericRepository<Book>();
-            connectionA.Update(newBook2, 0);
-
+            connectionA.Add(newBook1);
+            connectionA.Add(newBook2);
+            connectionA.Get(0);
         }
     }
 }
