@@ -27,18 +27,19 @@ namespace Homework2
                 Type type;
                 PropertyInfo[] properties;
 
-                foreach (T item in items)
+                for (int i = 0; i < items.Count; i++)
                 {
-                    type = item.GetType();
+                    type = items[i].GetType();
                     properties = type.GetProperties();
                     foreach (PropertyInfo property in properties)
                     {
-                        if (property.Name == "Id" && (int)property.GetValue(item) == id)
+                        if (property.Name == "Id" && (int)property.GetValue(items[i]) == id)
                         {
                             idIsValid = true;
                         }
                     }
                 }
+
 
                 if (idIsValid)
                 {
@@ -52,11 +53,34 @@ namespace Homework2
         }
         #endregion
 
-
+        #region Update
         public void Update(T obj, int id)
         {
+            bool idIsValid = false;
+            Type type;
+            PropertyInfo[] properties;
 
+            for (int i = 0; i < items.Count; i++)
+            {
+                type = items[i].GetType();
+                properties = type.GetProperties();
+                foreach (PropertyInfo property in properties)
+                {
+                    if (property.Name == "Id" && (int)property.GetValue(items[i]) == id)
+                    {
+                        items[i] = obj;
+                        idIsValid = true;
+                        Console.WriteLine("Ugurla update olundu");
+                    }
+                }
+            }
+
+            if (!idIsValid)
+            {
+                Console.WriteLine("Qeyd olunan id nomresine uygun element tapilmadi.");
+            }
         }
+        #endregion
 
         #region Get
         public void Get(int id)
